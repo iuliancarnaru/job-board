@@ -8,6 +8,7 @@ import {
 import { UserTable } from "./user";
 import { OrganisationTable } from "./organisation";
 import { createdAt, updatedAt } from "../helpers";
+import { relations } from "drizzle-orm";
 
 export const OrganizationUserSettingsTable = pgTable(
   "organization_user_settings",
@@ -24,4 +25,18 @@ export const OrganizationUserSettingsTable = pgTable(
     updatedAt,
   },
   (table) => [primaryKey({ columns: [table.userId, table.organizationId] })]
+);
+
+export const organizationUserSettingsRelations = relations(
+  OrganizationUserSettingsTable,
+  ({ one }) => ({
+    user: one(UserTable, {
+      fields: [OrganizationUserSettingsTable.userId],
+      references: [UserTable.id],
+    }),
+    organization: one(OrganisationTable, {
+      fields: [OrganizationUserSettingsTable.userId],
+      references: [OrganisationTable.id],
+    }),
+  })
 );
