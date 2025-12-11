@@ -1,5 +1,5 @@
 {
-  "id": "571ff69b-c217-4de3-8dce-9b4bed2b8232",
+  "id": "59d678fc-9dd8-432a-81d6-882500937781",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -133,10 +133,10 @@
         }
       },
       "foreignKeys": {
-        "job_listings_organizationId_organisations_id_fk": {
-          "name": "job_listings_organizationId_organisations_id_fk",
+        "job_listings_organizationId_organizations_id_fk": {
+          "name": "job_listings_organizationId_organizations_id_fk",
           "tableFrom": "job_listings",
-          "tableTo": "organisations",
+          "tableTo": "organizations",
           "columnsFrom": [
             "organizationId"
           ],
@@ -247,8 +247,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.organisations": {
-      "name": "organisations",
+    "public.organizations": {
+      "name": "organizations",
       "schema": "",
       "columns": {
         "id": {
@@ -351,10 +351,10 @@
           "onDelete": "no action",
           "onUpdate": "no action"
         },
-        "organization_user_settings_organizationId_organisations_id_fk": {
-          "name": "organization_user_settings_organizationId_organisations_id_fk",
+        "organization_user_settings_organizationId_organizations_id_fk": {
+          "name": "organization_user_settings_organizationId_organizations_id_fk",
           "tableFrom": "organization_user_settings",
-          "tableTo": "organisations",
+          "tableTo": "organizations",
           "columnsFrom": [
             "organizationId"
           ],

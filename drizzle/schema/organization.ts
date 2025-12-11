@@ -4,7 +4,7 @@ import { relations } from "drizzle-orm";
 import { JobListingTable } from "./jobListing";
 import { OrganizationUserSettingsTable } from "./organizationUserSettings";
 
-export const OrganisationTable = pgTable("organisations", {
+export const OrganizationTable = pgTable("organizations", {
   id: varchar().primaryKey(),
   name: varchar().notNull(),
   imageUrl: varchar(),
@@ -13,7 +13,7 @@ export const OrganisationTable = pgTable("organisations", {
 });
 
 export const organizationRelations = relations(
-  OrganisationTable,
+  OrganizationTable,
   ({ many }) => ({
     jobListings: many(JobListingTable),
     organizationUserSettings: many(OrganizationUserSettingsTable),
